@@ -233,7 +233,8 @@ export function ContactForm() {
           <label htmlFor={fieldId('consent')} className="text-sm leading-relaxed text-muted-foreground">
             By checking this box, I agree to receive appointment and promotional text messages from{' '}
             {business.name} at the number provided. Message and data rates may apply. Message frequency
-            varies. Reply STOP to opt out, HELP for help.
+            varies. Reply STOP to opt out, HELP for help.{' '}
+            <span className="font-semibold text-primary-dark">(required)</span>
           </label>
         </div>
         {errors.consent && (
@@ -241,6 +242,13 @@ export function ContactForm() {
             {errors.consent}
           </p>
         )}
+        <p className="ml-8 mt-2 text-xs text-muted-foreground">
+          You must be 18 years of age or older to use this SMS service.
+        </p>
+        <p className="ml-8 mt-1 text-xs text-muted-foreground">
+          Your mobile information and SMS consent are never shared or sold to third parties or
+          affiliates.
+        </p>
       </div>
 
       <button type="submit" disabled={submitting} className="btn btn-primary w-full disabled:opacity-70">

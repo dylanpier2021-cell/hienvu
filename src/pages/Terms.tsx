@@ -50,6 +50,9 @@ export default function Terms() {
           reminders, and occasional promotions to guests who opt in.
         </li>
         <li>
+          <strong>Age requirement:</strong> You must be 18 years of age or older to use this SMS service.
+        </li>
+        <li>
           <strong>Consent:</strong> You consent to receive text messages only after providing express
           opt in. Consent is not a condition of purchasing any service.
         </li>

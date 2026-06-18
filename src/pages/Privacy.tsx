@@ -46,6 +46,9 @@ export default function Privacy() {
           your number for this purpose.
         </li>
         <li>
+          <strong>Age requirement:</strong> You must be 18 years of age or older to use this SMS service.
+        </li>
+        <li>
           <strong>Message frequency:</strong> Message frequency varies based on your appointments and
           requests.
         </li>

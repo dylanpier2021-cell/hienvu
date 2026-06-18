@@ -101,14 +101,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-background/15 pt-6 text-sm text-background/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; {year} {business.name}, sole proprietor. All rights reserved.
+        <div className="mt-12 border-t border-background/15 pt-6 text-sm text-background/60">
+          <p className="mb-2">
+            {business.brand} is a trade name of {business.name}, sole proprietor.
           </p>
-          <nav aria-label="Legal" className="flex gap-5">
-            <Link to="/privacy" className="hover:text-primary-light">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-primary-light">Terms</Link>
-          </nav>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              &copy; {year} {business.name}, sole proprietor. All rights reserved.
+            </p>
+            <nav aria-label="Legal" className="flex gap-5">
+              <Link to="/privacy" className="hover:text-primary-light">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-primary-light">Terms</Link>
+            </nav>
+          </div>
         </div>
       </Container>
     </footer>
