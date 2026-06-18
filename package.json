@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Single-page marketing website for Hien Vu (sole proprietor), a luxury nail salon in Champaign, IL.",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite-react-ssg build && node scripts/generate-sitemap.mjs",
