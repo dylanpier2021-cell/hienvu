@@ -126,7 +126,7 @@ export function ContactForm() {
   const errId = (name: string) => `${uid}-${name}-err`
 
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-4">
+    <form onSubmit={onSubmit} className="space-y-4">
       <div>
         <label htmlFor={fieldId('name')} className="mb-1 block text-sm font-medium text-charcoal">
           Name <span className="text-primary-dark">*</span>
@@ -234,7 +234,7 @@ export function ContactForm() {
             By checking this box, I agree to receive appointment and promotional text messages from{' '}
             {business.name} at the number provided. Message and data rates may apply. Message frequency
             varies. Reply STOP to opt out, HELP for help.{' '}
-            <span className="font-semibold text-primary-dark">(required)</span>
+            <span className="font-semibold text-destructive">(required)</span>
           </label>
         </div>
         {errors.consent && (
