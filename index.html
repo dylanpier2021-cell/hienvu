@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#CC9F33" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Preload the hero image (largest contentful paint) for a fast first render. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/hero-1000.webp"
+      imagesrcset="/images/hero-560.webp 560w, /images/hero-1000.webp 1000w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <!-- Title and meta description are set per route via the SSG Head API (src/components/Seo.tsx). -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
