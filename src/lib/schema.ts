@@ -92,6 +92,36 @@ export function faqSchema(faqs: Faq[]) {
   }
 }
 
+/** Article (BlogPosting) schema for an individual blog post. */
+export function articleSchema(post: {
+  title: string
+  description: string
+  isoDate: string
+  path: string
+  image?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.isoDate,
+    dateModified: post.isoDate,
+    image: post.image ? absUrl(post.image) : DEFAULT_OG_IMAGE,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': absUrl(post.path) },
+    author: {
+      '@type': 'Person',
+      name: business.owner,
+      alternateName: business.ownerNickname,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: business.brand,
+      logo: { '@type': 'ImageObject', url: absUrl('/apple-touch-icon.png') },
+    },
+  }
+}
+
 export function breadcrumbSchema(items: BreadcrumbItem[]) {
   return {
     '@context': 'https://schema.org',

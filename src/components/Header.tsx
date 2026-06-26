@@ -1,27 +1,22 @@
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { business } from '@/data/business'
 import { Logo } from './Logo'
 import { PhoneIcon, MenuIcon, CloseIcon } from './icons'
 import { cn } from '@/lib/cn'
 
 const NAV = [
-  { label: 'Services', hash: '#services' },
-  { label: 'Pricing', hash: '#pricing' },
-  { label: 'Reviews', hash: '#reviews' },
-  { label: 'FAQ', hash: '#faq' },
-  { label: 'Contact', hash: '#contact' },
+  { label: 'About', to: '/about' },
+  { label: 'Services', to: '/services' },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'Contact', to: '/contact-us' },
 ]
 
 export function Header() {
   const { pathname } = useLocation()
-  const onHome = pathname === '/'
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-
-  // Anchor links resolve to "#x" on the home page (smooth scroll, no reload) and
-  // "/#x" elsewhere (navigate home, then the browser scrolls to the section).
-  const href = (hash: string) => (onHome ? hash : `/${hash}`)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -32,6 +27,12 @@ export function Header() {
 
   // Close the mobile menu whenever the route changes.
   useEffect(() => setOpen(false), [pathname])
+
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    cn(
+      'text-sm font-medium transition-colors hover:text-primary-dark',
+      isActive ? 'text-primary-dark' : 'text-foreground/80',
+    )
 
   return (
     <header
@@ -47,13 +48,9 @@ export function Header() {
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {NAV.map((item) => (
-            <a
-              key={item.hash}
-              href={href(item.hash)}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary-dark"
-            >
+            <NavLink key={item.to} to={item.to} className={navLinkClass}>
               {item.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -65,9 +62,9 @@ export function Header() {
             <PhoneIcon className="h-4 w-4 text-primary-dark" />
             {business.phoneDisplay}
           </a>
-          <a href={href('#booking')} className="btn btn-primary">
+          <Link to="/contact-us" className="btn btn-primary">
             Book Now
-          </a>
+          </Link>
         </div>
 
         {/* Mobile controls */}
@@ -97,22 +94,18 @@ export function Header() {
         <div id="mobile-menu" className="border-t border-border bg-background lg:hidden">
           <nav aria-label="Mobile" className="container flex flex-col py-4">
             {NAV.map((item) => (
-              <a
-                key={item.hash}
-                href={href(item.hash)}
+              <NavLink
+                key={item.to}
+                to={item.to}
                 onClick={() => setOpen(false)}
                 className="border-b border-border/60 py-3 text-base font-medium text-foreground/90"
               >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
-            <a
-              href={href('#booking')}
-              onClick={() => setOpen(false)}
-              className="btn btn-primary mt-4 w-full"
-            >
+            <Link to="/contact-us" onClick={() => setOpen(false)} className="btn btn-primary mt-4 w-full">
               Book Now
-            </a>
+            </Link>
           </nav>
         </div>
       )}

@@ -1,31 +1,43 @@
+import { Link } from 'react-router-dom'
 import { pricing, pricingNote } from '@/data/pricing'
 import { Section, SectionHeading } from './Section'
 import { Container } from './Container'
 import { Reveal } from './Reveal'
 
-export function PricingSection() {
-  return (
-    <Section id="pricing" ariaLabelledby="pricing-heading">
-      <Container>
-        <SectionHeading
-          id="pricing-heading"
-          align="center"
-          eyebrow="Price Menu"
-          title="Simple, honest pricing"
-          subtitle={pricingNote}
-        />
+interface PricingSectionProps {
+  /** Show only the first N pricing groups (used for the home page highlights). */
+  limit?: number
+  /** Bottom call to action. */
+  cta?: { label: string; to: string }
+  /** Hide the section heading when the page already provides an <h1>. */
+  showHeading?: boolean
+}
 
-        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
-          {pricing.map((group, i) => (
+export function PricingSection({
+  limit,
+  cta = { label: 'Book your appointment', to: '/contact-us' },
+  showHeading = true,
+}: PricingSectionProps = {}) {
+  const groups = limit ? pricing.slice(0, limit) : pricing
+
+  return (
+    <Section id="pricing" ariaLabelledby={showHeading ? 'pricing-heading' : undefined}>
+      <Container>
+        {showHeading && (
+          <SectionHeading
+            id="pricing-heading"
+            align="center"
+            eyebrow="Price Menu"
+            title="Simple, honest pricing"
+            subtitle={pricingNote}
+          />
+        )}
+
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 [&:not(:first-child)]:mt-12">
+          {groups.map((group, i) => (
             <Reveal key={group.category} delay={(i % 2) * 0.05}>
-              <section
-                aria-labelledby={`price-${i}`}
-                className="card h-full p-6 sm:p-7"
-              >
-                <h3
-                  id={`price-${i}`}
-                  className="font-serif text-2xl font-semibold text-charcoal"
-                >
+              <section aria-labelledby={`price-${i}`} className="card h-full p-6 sm:p-7">
+                <h3 id={`price-${i}`} className="font-serif text-2xl font-semibold text-charcoal">
                   {group.category}
                 </h3>
                 <span aria-hidden="true" className="mt-3 block h-[2px] w-16 rounded-full bg-gold-gradient" />
@@ -51,9 +63,9 @@ export function PricingSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <a href="#booking" className="btn btn-primary">
-            Book Your Appointment
-          </a>
+          <Link to={cta.to} className="btn btn-primary">
+            {cta.label}
+          </Link>
         </div>
       </Container>
     </Section>

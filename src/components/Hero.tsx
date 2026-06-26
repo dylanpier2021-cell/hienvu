@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { business } from '@/data/business'
 import { Stars } from './Stars'
 
@@ -47,12 +48,12 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#booking" className="btn btn-primary">
+            <Link to="/contact-us" className="btn btn-primary">
               Book Now
-            </a>
-            <a href="#services" className="btn btn-ghost-light">
+            </Link>
+            <Link to="/services" className="btn btn-ghost-light">
               View Services
-            </a>
+            </Link>
           </div>
         </div>
       </div>

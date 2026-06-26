@@ -1,11 +1,9 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { business } from '@/data/business'
 import { Container } from './Container'
 import { PhoneIcon, MailIcon, MapPinIcon, GoogleIcon, YelpIcon } from './icons'
 
 export function Footer() {
-  const onHome = useLocation().pathname === '/'
-  const href = (hash: string) => (onHome ? hash : `/${hash}`)
   const year = new Date().getFullYear()
 
   return (
@@ -32,11 +30,11 @@ export function Footer() {
           <nav aria-label="Footer" className="text-sm">
             <h2 className="font-serif text-lg font-semibold text-background">Explore</h2>
             <ul className="mt-3 space-y-2">
-              <li><a href={href('#services')} className="text-background/75 hover:text-primary-light">Services</a></li>
-              <li><a href={href('#pricing')} className="text-background/75 hover:text-primary-light">Pricing</a></li>
-              <li><a href={href('#reviews')} className="text-background/75 hover:text-primary-light">Reviews</a></li>
-              <li><a href={href('#faq')} className="text-background/75 hover:text-primary-light">FAQ</a></li>
-              <li><a href={href('#booking')} className="text-background/75 hover:text-primary-light">Book Now</a></li>
+              <li><Link to="/about" className="text-background/75 hover:text-primary-light">About</Link></li>
+              <li><Link to="/services" className="text-background/75 hover:text-primary-light">Services</Link></li>
+              <li><Link to="/pricing" className="text-background/75 hover:text-primary-light">Pricing</Link></li>
+              <li><Link to="/blog" className="text-background/75 hover:text-primary-light">Blog</Link></li>
+              <li><Link to="/contact-us" className="text-background/75 hover:text-primary-light">Contact</Link></li>
             </ul>
           </nav>
 

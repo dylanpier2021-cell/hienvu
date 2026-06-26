@@ -6,21 +6,21 @@ export default function Privacy() {
     <LegalLayout
       title="Privacy Policy"
       metaTitle="Privacy Policy | Hien Vu Nails Salon in Champaign, IL"
-      description="How Hien Vu in Champaign, IL collects, uses and protects your information, including our SMS text messaging consent, opt-out and no-sharing practices."
+      description="How Hien Vu (DBA Hien Vu Nails) in Champaign, IL collects, uses and protects your information, including our SMS text messaging consent, opt-out and no-sharing practices."
       path="/privacy"
-      updated="June 7, 2026"
+      updated="2026/06/07"
     >
       <p>
-        This Privacy Policy explains how {business.name} ("we," "us," or "our"), a sole proprietorship
-        owned by {business.owner}, collects, uses and protects information when you contact us, visit
-        our salon, or use our website. We respect your privacy and are committed to handling your
-        information responsibly.
+        This Privacy Policy explains how {business.legalName} (DBA {business.dba}) ("we," "us," or
+        "our"), a sole proprietorship owned by {business.owner}, collects, uses and protects
+        information when you contact us, visit our salon, or use our website. We respect your privacy
+        and are committed to handling your information responsibly.
       </p>
 
       <h2>Information We Collect</h2>
       <p>We may collect the following information when you choose to share it with us:</p>
       <ul>
-        <li>Your name, phone number and email address when you call, text, email, submit our form, or book an appointment.</li>
+        <li>Your name, phone number and email address when you call, text, email, submit our contact form, or book an appointment.</li>
         <li>The message you send us and your appointment preferences, such as the service you request and your preferred day or time.</li>
         <li>Basic website usage data, such as pages visited, collected through standard analytics to help us improve our site.</li>
       </ul>
@@ -35,15 +35,16 @@ export default function Privacy() {
 
       <h2>SMS Text Messaging</h2>
       <p>
-        If you provide your mobile number and opt in, we may send you appointment related text messages
-        such as confirmations and reminders, and promotional messages where you have consented. Your
-        consent to receive text messages is not a condition of any purchase.
+        If you provide your mobile number and opt in, we may send you text messages from{' '}
+        {business.smsSenderName}, including transactional messages such as appointment confirmations
+        and reminders, and, where you have separately consented, marketing and promotional messages.
+        Your consent to receive text messages is not a condition of any purchase.
       </p>
       <ul>
         <li>
-          <strong>Opt in:</strong> You agree to receive text messages from {business.name} only after
-          you give express consent, for example by checking the consent box on our form or sending us
-          your number for this purpose.
+          <strong>Opt in:</strong> You agree to receive text messages only after you give express
+          consent, for example by checking a consent box on our Contact Us form, or by texting or
+          calling us your number for this purpose.
         </li>
         <li>
           <strong>Age requirement:</strong> You must be 18 years of age or older to use this SMS service.
@@ -53,24 +54,25 @@ export default function Privacy() {
           requests.
         </li>
         <li>
-          <strong>Opt out:</strong> You can opt out at any time by replying <strong>STOP</strong> to any
-          message. After you reply STOP, we will send one confirmation message and will not send further
-          texts unless you opt in again.
+          <strong>Opt out (STOP):</strong> You can opt out at any time by replying{' '}
+          <strong>STOP</strong> to any message. After you reply STOP, we will send one confirmation
+          message and will not send further texts unless you opt in again.
         </li>
         <li>
-          <strong>Help:</strong> Reply <strong>HELP</strong> for assistance, or contact us at{' '}
+          <strong>Help (HELP):</strong> Reply <strong>HELP</strong> for assistance, or contact us at{' '}
           {business.phoneDisplay}.
         </li>
         <li>
-          <strong>Rates:</strong> Message and data rates may apply, depending on your mobile carrier and
-          plan.
+          <strong>Rates:</strong> Message and data rates may apply, depending on your mobile carrier
+          and plan.
         </li>
       </ul>
       <p>
         <strong>
-          No mobile information will be shared with third parties or affiliates for marketing or
-          promotional purposes. Text messaging originator opt-in data and consent will not be shared
-          with any third parties.
+          No mobile information will be shared with third parties/affiliates for marketing/promotional
+          purposes. Information sharing to subcontractors in support services, such as customer service
+          is permitted. All other use case categories exclude text messaging originator opt-in data and
+          consent; this information will not be shared with any third parties.
         </strong>
       </p>
 
@@ -123,7 +125,7 @@ export default function Privacy() {
       <h2>Contact Us</h2>
       <p>If you have questions about this Privacy Policy, please reach out:</p>
       <ul>
-        <li>{business.name}, sole proprietor</li>
+        <li>{business.legalName} (DBA {business.dba}), sole proprietor</li>
         <li>{business.address.street}, {business.address.city}, {business.address.state} {business.address.zip}</li>
         <li>Phone: <a href={business.phoneHref}>{business.phoneDisplay}</a></li>
         <li>Email: <a href={`mailto:${business.email}`}>{business.email}</a></li>

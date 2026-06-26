@@ -7,7 +7,7 @@ import { ServicesSection } from '@/components/ServicesSection'
 import { PricingSection } from '@/components/PricingSection'
 import { ReviewsSection } from '@/components/ReviewsSection'
 import { FaqSection } from '@/components/FaqSection'
-import { ContactSection } from '@/components/ContactSection'
+import { LocationSection } from '@/components/LocationSection'
 import { localBusinessSchema, websiteSchema, faqSchema } from '@/lib/schema'
 import { faqs } from '@/data/faqs'
 
@@ -25,11 +25,11 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <AboutSection />
-      <ServicesSection />
-      <PricingSection />
+      <ServicesSection limit={6} cta={{ label: 'View all services', to: '/services' }} />
+      <PricingSection limit={2} cta={{ label: 'View full price menu', to: '/pricing' }} />
       <ReviewsSection />
       <FaqSection />
-      <ContactSection />
+      <LocationSection />
     </>
   )
 }

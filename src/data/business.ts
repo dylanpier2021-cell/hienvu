@@ -16,8 +16,14 @@ export const business = {
   /** Legal / schema name (sole proprietor). */
   name: 'Hien Vu',
   legalName: 'Hien Vu',
-  /** Display brand used in the logo and headings. */
+  /** Display brand / DBA (trade name) used in the logo and headings. */
   brand: 'Hien Vu Nails',
+  dba: 'Hien Vu Nails',
+  /**
+   * Sender identity used verbatim in every SMS consent disclosure, per the
+   * GoHighLevel / Twilio A2P 10DLC registration (legal name + DBA).
+   */
+  smsSenderName: 'Hien Vu (DBA Hien Vu Nails)',
   tagline: "Champaign County's Premier Luxury Nail Salon",
   owner: 'Hien Vu',
   ownerNickname: 'Hannah',

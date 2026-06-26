@@ -4,24 +4,24 @@ import { LegalLayout } from '@/components/LegalLayout'
 export default function Terms() {
   return (
     <LegalLayout
-      title="Terms of Service"
-      metaTitle="Terms of Service | Hien Vu Nails Salon in Champaign, IL"
-      description="The terms for using the Hien Vu Nails website and services in Champaign, IL, including appointments, pricing, cancellations and our SMS text messaging program."
+      title="Terms & Conditions"
+      metaTitle="Terms & Conditions | Hien Vu Nails Salon in Champaign, IL"
+      description="The terms for using the Hien Vu (DBA Hien Vu Nails) website and services in Champaign, IL, including appointments, pricing, cancellations and our SMS text messaging program."
       path="/terms"
-      updated="June 7, 2026"
+      updated="2026/06/07"
     >
       <p>
-        Welcome to {business.name}. By using our website or booking our services, you agree to these
-        Terms of Service. Please read them carefully. If you do not agree, please do not use the site.
-        {' '}
-        {business.name} is a sole proprietorship owned by {business.owner}.
+        Welcome to {business.legalName} (DBA {business.dba}). By using our website or booking our
+        services, you agree to these Terms and Conditions. Please read them carefully. If you do not
+        agree, please do not use the site. {business.dba} is the trade name of {business.legalName}, a
+        sole proprietorship owned by {business.owner}.
       </p>
 
       <h2>Our Services</h2>
       <p>
-        {business.name} provides nail care services including manicures, pedicures, gel, dip powder,
-        acrylic, Gel X and nail art at our salon in {business.address.city}, {business.address.state}.
-        Service availability and offerings may change over time.
+        {business.legalName} (DBA {business.dba}) provides nail care services including manicures,
+        pedicures, gel, dip powder, acrylic, Gel X and nail art at our salon in {business.address.city},
+        {' '}{business.address.state}. Service availability and offerings may change over time.
       </p>
 
       <h2>Appointments and Walk-Ins</h2>
@@ -40,9 +40,10 @@ export default function Terms() {
 
       <h2>SMS Text Messaging Program</h2>
       <p>
-        If you opt in, {business.name} may send appointment related text messages such as confirmations
-        and reminders, and promotional messages where you have consented. By providing your mobile
-        number and opting in, you agree to the following terms.
+        If you opt in, {business.smsSenderName} may send appointment related text messages such as
+        confirmations and reminders, and, where you have separately consented, marketing and
+        promotional messages. By providing your mobile number and opting in, you agree to the following
+        terms.
       </p>
       <ul>
         <li>
@@ -57,7 +58,11 @@ export default function Terms() {
           opt in. Consent is not a condition of purchasing any service.
         </li>
         <li>
-          <strong>Message frequency:</strong> Frequency varies based on your appointments and requests.
+          <strong>Message frequency:</strong> Message frequency may vary based on your appointments and
+          requests.
+        </li>
+        <li>
+          <strong>Rates:</strong> Message and data rates may apply.
         </li>
         <li>
           <strong>STOP:</strong> Reply <strong>STOP</strong> at any time to cancel. You will receive one
@@ -67,12 +72,9 @@ export default function Terms() {
           <strong>HELP:</strong> Reply <strong>HELP</strong> for help, or call us at {business.phoneDisplay}.
         </li>
         <li>
-          <strong>Rates:</strong> Message and data rates may apply.
-        </li>
-        <li>
-          <strong>Carriers:</strong> Supported carriers include AT&amp;T, Verizon, T-Mobile, Sprint,
-          U.S. Cellular, and other major U.S. carriers. Carriers are not liable for delayed or
-          undelivered messages.
+          <strong>Carriers:</strong> Supported carriers include AT&amp;T, Verizon, T-Mobile, US
+          Cellular, and other major U.S. carriers. Carriers are not liable for delayed or undelivered
+          messages.
         </li>
         <li>
           <strong>Privacy:</strong> We do not share or sell your mobile opt-in data or phone number with
@@ -89,7 +91,7 @@ export default function Terms() {
 
       <h2>Website Use and Intellectual Property</h2>
       <p>
-        The content on this website, including text, graphics and the {business.name} name and branding,
+        The content on this website, including text, graphics and the {business.dba} name and branding,
         is owned by us or our licensors and is provided for your personal, non-commercial use. Please do
         not copy or reuse our content without permission.
       </p>
@@ -103,9 +105,9 @@ export default function Terms() {
 
       <h2>Limitation of Liability</h2>
       <p>
-        To the fullest extent permitted by law, {business.name} is not liable for any indirect or
-        incidental damages arising from your use of the website. Nothing in these terms limits liability
-        that cannot be limited under applicable law.
+        To the fullest extent permitted by law, {business.legalName} (DBA {business.dba}) is not liable
+        for any indirect or incidental damages arising from your use of the website. Nothing in these
+        terms limits liability that cannot be limited under applicable law.
       </p>
 
       <h2>Governing Law</h2>
@@ -122,7 +124,7 @@ export default function Terms() {
 
       <h2>Contact Us</h2>
       <ul>
-        <li>{business.name}, sole proprietor</li>
+        <li>{business.legalName} (DBA {business.dba}), sole proprietor</li>
         <li>{business.address.street}, {business.address.city}, {business.address.state} {business.address.zip}</li>
         <li>Phone: <a href={business.phoneHref}>{business.phoneDisplay}</a></li>
         <li>Email: <a href={`mailto:${business.email}`}>{business.email}</a></li>

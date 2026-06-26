@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { business } from '@/data/business'
 import { Section, SectionHeading } from './Section'
 import { Container } from './Container'
@@ -60,9 +61,9 @@ export function AboutSection() {
               </ul>
 
               <div className="mt-8">
-                <a href="#booking" className="btn btn-primary">
-                  Book With Hannah
-                </a>
+                <Link to="/about" className="btn btn-primary">
+                  Read Our Story
+                </Link>
               </div>
             </div>
           </Reveal>
